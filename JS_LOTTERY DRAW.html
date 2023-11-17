@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lottery Draw</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  	<style>
+  		#result{
+  			color: rgb(231, 207, 136);
+ 		}
+ 		.card-title{
+ 			color:rgb(8, 112, 78);
+ 		}
+ 		.card-text{
+ 			color:black;
+ 		}
+  	</style>
+</head>
+<body class="bg-dark">
+	<div class="container">
+		<div class="row">
+			<div class="card mx-auto mt-5 rounded bg-light">
+				<div class="card-body text-center">
+					<h2 class="card-title">Kerala Lottery</h2>
+					<p class="card-text">Kerala Lottery Result Today</p>
+					<button type="button" class="btn btn-outline-primary" onclick="getRandomItem()" data-toggle ="modal" data-target="#popup">Winner</button>
+				</div>
+
+				<!-- model (popup Box) start -->
+					<div class="modal" id="popup">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h2 class="modal-title mx-auto"> Today's Lottery Result </h2>
+									<button class="close" data-dismiss="modal">&times;</button>
+								</div>
+								<div class="modal-body">
+									<div>
+										<h5 class="modal-title text-center"> 1<sup>st</sup> Price - <strong>1,00,00,000/-</strong> </h5><br>
+									</div>
+									<div>
+										<p class="text-center text-warning">Lottery Ticket No.</p>
+									</div>
+									<div class="text-center">
+										<span id="resultOne">0</span>
+									</div>
+									<div class="modal-footer">
+									<div class="mx-auto">
+									<button class="btn btn-outline-success" style="border-radius: 20px;" data-toggle="modal" data-target="#popup">Close</button>
+									</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- in the HTML page red color start-->
+							<div class="row">
+								<div class="col-sm-4 mx-auto p-5">
+									<h6 class="text-center " id="result"></h6>
+								</div>
+							</div>
+							<!-- in the HTML page red color end-->
+		</div>
+	</div>
+	
+	<script language="javascript" type="text/javascript">
+
+		var ticketNumber = ["PA 853989","PB 853989","PC 853989","PD 853989","PE 853989", "PF 853989", "PG 853989","PH 853989","PI 853989","PJ 853989","PK 853989","PL 853989"];
+
+	function getRandomItem() {
+ 		const random = Math.floor(Math.random() * ticketNumber.length);
+  		const winner = ticketNumber[random];
+
+	document.getElementById("result").innerHTML=winner;
+	document.getElementById("resultOne").innerHTML=winner;
+	console.log(winner);
+}
+</script>
+
+</body>
+</html>
